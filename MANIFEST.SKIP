@@ -1,0 +1,6 @@
+Makefile
+\.svn.*
+.*\.txt$
+.*\.old$
+.*\.bak$
+.*~$

@@ -1,0 +1,15 @@
+#!/usr/bin/perl 
+# Christopher Boumenot <boumenot@gmail.com>
+
+use strict;
+use warnings;
+
+use Net::TiVo;
+use Cache::FileCache;
+#use Log::Log4perl qw(:easy);
+#Log::Log4perl->easy_init($INFO);
+
+my $tivo = Net::TiVo->new(host  => $ENV{TIVO_HOST},
+                          mac   => $ENV{TIVO_MAC});
+
+print $_->name, "\n" for ($tivo->folders());

@@ -1,0 +1,53 @@
+NAME
+    Net::TiVo - Module for connecting to TiVo via its HTTPS interface and
+    enumerating the shows stored on it.
+
+INSTALLATION
+    
+    % perl Makefile.PL 
+    % make
+    % make test
+    % make install
+
+REQUIREMENTS
+    
+    XML::Simple
+    Log::Log4perl
+    LWP::UserAgent
+
+PLATFORMS
+    
+    FreeBSD v6.1
+
+SYNOPSIS
+      use Net::TiVo;
+        
+      my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
+
+      for ($tivo->shows()) {
+          print $_->as_string(), "\n";
+      }     
+
+ABSTRACT
+    "Net::TiVo" provides an object-oriented interface to TiVo's XML/HTTPS
+    interface. This makes it possible to enumerate the folders and shows,
+    and dump their meta-data.
+
+DESCRIPTION
+    "Net::TiVo" has a very simple interface, and currently only supports the
+    enumeration of folder and shows using the XML/HTTPS interface. The main
+    purpose of this module was to provide access to the TiVo
+    programmatically to automate the process of downloading shows from a
+    TiVo.
+
+  METHODS
+    folders()
+        Returns an array or reference to an array containing a list of
+        Net::TiVo::Folder objects.
+
+SEE ALSO
+    Net::TiVo::Folder, Net::TiVo::Show
+
+AUTHOR
+    Christopher Boumenot, <boumenot@gmail.com>
+
