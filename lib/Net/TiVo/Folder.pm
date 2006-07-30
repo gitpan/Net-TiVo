@@ -1,4 +1,4 @@
-# $Id: Folder.pm 24 2006-07-29 03:30:39Z boumenot $
+# $Id: Folder.pm 30 2006-07-30 01:11:12Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -184,11 +184,12 @@ TiVo folder.
 
 =head1 SYNOPSIS
 
-  for ($tivo->folders()) {
+  use Net::TiVo;
+	
+  my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
+
+  for ($tivo->folders()->shows()) {
       print $_->as_string();
-      for ($_->shows()) {
-          print $_->as-string()
-      } 
   }
 
 =head1 DESCRPTION

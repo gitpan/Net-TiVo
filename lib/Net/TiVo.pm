@@ -1,4 +1,4 @@
-# $Id: TiVo.pm 26 2006-07-29 03:41:20Z boumenot $
+# $Id: TiVo.pm 30 2006-07-30 01:11:12Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -13,7 +13,7 @@ package Net::TiVo;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use LWP::UserAgent;
 use HTTP::Request;
@@ -138,7 +138,7 @@ enumerating the shows stored on it.
 	
   my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
 
-  for ($tivo->shows()) {
+  for ($tivo->folders()) {
       print $_->as_string(), "\n";
   }	
 

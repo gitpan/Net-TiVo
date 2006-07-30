@@ -1,4 +1,4 @@
-# $Id: Show.pm 24 2006-07-29 03:30:39Z boumenot $
+# $Id: Show.pm 30 2006-07-30 01:11:12Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -93,8 +93,14 @@ TiVo show.
 
 =head1 SYNOPSIS
 
-  print $show->episode(), "\n";
-  print $show->episode_num(), "\n";
+  use Net::TiVo;
+	
+  my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
+
+  for ($tivo->folders()->shows()) {
+      print $_->episode(), "\n";
+      print $_->episode_num(), "\n";
+  }
 
 =head1 DESCRPTION
 
