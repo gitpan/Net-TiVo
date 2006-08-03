@@ -1,6 +1,5 @@
 NAME
-    Net::TiVo - Module for connecting to TiVo via its HTTPS interface and
-    enumerating the shows stored on it.
+    Net::TiVo - Perl interface to TiVo.
 
 INSTALLATION
     

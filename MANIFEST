@@ -5,6 +5,7 @@ eg/folders
 lib/Net/TiVo.pm
 lib/Net/TiVo/Folder.pm
 lib/Net/TiVo/Show.pm
+Makefile.PL
 MANIFEST
 MANIFEST.SKIP
 README

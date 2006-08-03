@@ -1,4 +1,4 @@
-# $Id: TiVo.pm 30 2006-07-30 01:11:12Z boumenot $
+# $Id: TiVo.pm 32 2006-08-03 01:40:11Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -13,7 +13,7 @@ package Net::TiVo;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use LWP::UserAgent;
 use HTTP::Request;
@@ -129,8 +129,7 @@ __END__
 
 =head1 NAME
 
-Net::TiVo - Module for connecting to TiVo via its HTTPS interface and
-enumerating the shows stored on it.
+Net::TiVo - Perl interface to TiVo.
 
 =head1 SYNOPSIS
 
