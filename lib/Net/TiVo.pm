@@ -1,4 +1,4 @@
-# $Id: TiVo.pm 32 2006-08-03 01:40:11Z boumenot $
+# $Id: TiVo.pm 53 2006-12-29 17:49:53Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -13,7 +13,7 @@ package Net::TiVo;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use LWP::UserAgent;
 use HTTP::Request;
@@ -108,7 +108,14 @@ sub _parse_content {
     # haven't created any folders yet, then this is the Now Playing
     # folder, and needs to be treated specially.
     push @$folder_aref, Net::TiVo::Folder->new(xmlref => $xmlref);
-    INFO("added the folder " . $folder_aref->[-1]->name());
+
+    # 2006/12/29 - RHARMAN: TiVo Suggestions can exist but contain zero videos
+    if ($folder_aref->[-1]->total_items() > 0) {
+        INFO("added the folder " . $folder_aref->[-1]->name());
+    } else {
+        INFO("skipped the folder " , $folder_aref->[-1]->name(), " because it was empty.");
+        pop @$folder_aref;
+    }
 
     for my $i (@{$xmlref->{Item}}) {
         my $ct = $i->{Links}->{Content}->{ContentType};
@@ -133,13 +140,13 @@ Net::TiVo - Perl interface to TiVo.
 
 =head1 SYNOPSIS
 
-  use Net::TiVo;
-	
-  my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
+    use Net::TiVo;
 
-  for ($tivo->folders()) {
-      print $_->as_string(), "\n";
-  }	
+    my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
+
+    for ($tivo->folders()) {
+        print $_->as_string(), "\n";
+    }	
 
 =head1 ABSTRACT
 

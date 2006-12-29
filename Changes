@@ -1,3 +1,6 @@
+0.04
+    (cmb) Patch by Richard G. Harman Jr., skip folders that have no 
+          shows.
 0.03
     (cmb) Ahhh!  I wasn't including Makefile.PL in the distribution.
 0.02
