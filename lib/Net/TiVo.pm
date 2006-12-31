@@ -1,4 +1,4 @@
-# $Id: TiVo.pm 53 2006-12-29 17:49:53Z boumenot $
+# $Id: TiVo.pm 54 2006-12-29 17:55:03Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -13,7 +13,7 @@ package Net::TiVo;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use LWP::UserAgent;
 use HTTP::Request;
@@ -58,13 +58,12 @@ sub folders {
         my @folders;
         $self->_parse_content($resp->content(), \@folders);
 
-        if (scalar(@folders) == 0) {
-            return undef;
-        } 
+        return unless @folders;
         return (wantarray) ? @folders : \@folders;
     } 
+
     print "%Error: $resp->status_line()!\n";
-    return undef;
+    return;
 }
 
 
