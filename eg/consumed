@@ -1,4 +1,5 @@
 #!/usr/bin/perl 
+# $Id: consumed 56 2007-01-10 14:41:53Z boumenot $
 # Christopher Boumenot <boumenot@gmail.com>
 
 use strict;

@@ -1,8 +1,8 @@
-# $Id: Show.pm 30 2006-07-30 01:11:12Z boumenot $
+# $Id: Show.pm 56 2007-01-10 14:41:53Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
-# Copyright 2006 by Christopher Boumenot.  This program is free 
+# Copyright 2006-2007 by Christopher Boumenot.  This program is free 
 # software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
 #
@@ -97,9 +97,10 @@ TiVo show.
 	
   my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
 
-  for ($tivo->folders()->shows()) {
-      print $_->episode(), "\n";
-      print $_->episode_num(), "\n";
+  for my $folder ($tivo->folders()) {
+      for my $show ($folder->shows()) {
+          print $show->as_string(), "\n";
+      }
   }
 
 =head1 DESCRPTION
@@ -157,7 +158,7 @@ Returns the duration of this show in milliseconds.
 
 =item description()
 
-Returns the description of this particular show.
+Returns the description of this show.
 
 =item program_id()
 
@@ -169,8 +170,8 @@ Returns a hexadecimal string containing the series id.
 
 =item url()
 
-Returns the url of this show.  This information can be used to download the episode
-from TiVo to machine.
+Returns the url of this show.  This information can be used to download the
+episode from TiVo to machine.
 
 =item as_string()
 

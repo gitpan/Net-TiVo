@@ -1,3 +1,15 @@
+0.06
+    (cmb) David Steele noticed a problem when using the example in the 
+          documentation.  The documentation was wrong, it has now been
+          fixed
+
+          Fix the wording, and grammar for some of the documentation, 
+          and comments.
+   
+          Update the copyright of the library.
+0.05
+    (cmb) Patch by Kevin Brintnall to clarify the return of the 
+          folders function.
 0.04
     (cmb) Patch by Richard G. Harman Jr., skip folders that have no 
           shows.

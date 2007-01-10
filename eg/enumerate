@@ -1,10 +1,10 @@
 #!/usr/bin/perl 
+# $Id: enumerate 56 2007-01-10 14:41:53Z boumenot $
 # Christopher Boumenot <boumenot@gmail.com>
 
 use Net::TiVo;
 use Net::TiVo::Show;
 use Net::TiVo::Folder;
-use Cache::FileCache;
 #use Log::Log4perl;
 #Log::Log4perl->easy_init($DEBUG);
 

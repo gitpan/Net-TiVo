@@ -15,6 +15,9 @@ REQUIREMENTS
     LWP::UserAgent
 
 PLATFORMS
+
+    I have tested it on the following platforms, but it should work on any platform
+    that runs Perl, and meets the above requirements.
     
     FreeBSD v6.1
 
@@ -23,12 +26,15 @@ SYNOPSIS
         
       my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
 
-      for ($tivo->shows()) {
-          print $_->as_string(), "\n";
+      for my $folder ($tivo->folders()) {
+          print "--->", $show->as_string(), "<---\n";
+          for my $show ($folder->shows()) {
+              print $show->as_string(), "\n";
+          }
       }     
 
 ABSTRACT
-    "Net::TiVo" provides an object-oriented interface to TiVo's XML/HTTPS
+    "Net::TiVo" provides an object-oriented interface to TiVo's REST
     interface. This makes it possible to enumerate the folders and shows,
     and dump their meta-data.
 
@@ -39,7 +45,7 @@ DESCRIPTION
     programmatically to automate the process of downloading shows from a
     TiVo.
 
-  METHODS
+METHODS
     folders()
         Returns an array or reference to an array containing a list of
         Net::TiVo::Folder objects.

@@ -1,8 +1,8 @@
-# $Id: Folder.pm 30 2006-07-30 01:11:12Z boumenot $
+# $Id: Folder.pm 56 2007-01-10 14:41:53Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
-# Copyright 2006 by Christopher Boumenot.  This program is free 
+# Copyright 2006-2007 by Christopher Boumenot.  This program is free 
 # software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
 #
@@ -29,7 +29,7 @@ our %DEFAULT_ATTRIBUTES_XPATH = (
     item_start   => [qw(ItemStart)],
     global_sort  => [qw(GlobalSort)],
     sort_order   => [qw(SortOrder)],
-    # Due to the way folders are created it's is difficult
+    # Due to the way folders are created it is difficult
     # to get the url of the folder.  I could add it easily
     # enough, but it would be a hack, and I'm not sure 
     # that you really need the url of the folder.  I need
@@ -179,8 +179,8 @@ __END__
 
 =head1 NAME
 
-Net::TiVo::Folder - Class that wraps the XML interface that defines a
-TiVo folder.
+Net::TiVo::Folder - Class that wraps the XML description that defines a TiVo
+folder.
 
 =head1 SYNOPSIS
 
@@ -188,8 +188,8 @@ TiVo folder.
 	
   my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
 
-  for ($tivo->folders()->shows()) {
-      print $_->as_string();
+  for my $folder ($tivo->folders()) {
+      print $folder->as_string(), "\n";
   }
 
 =head1 DESCRPTION
@@ -240,7 +240,7 @@ summing the individual shows contained in this folder.
 
 =item shows()
 
-Returns an array containing of the shows contained in this folder.
+Returns an array of the shows contained in this folder.
 
 =item as_string()
 

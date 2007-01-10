@@ -1,8 +1,8 @@
-# $Id: TiVo.pm 54 2006-12-29 17:55:03Z boumenot $
+# $Id: TiVo.pm 56 2007-01-10 14:41:53Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
-# Copyright 2006 by Christopher Boumenot.  This program is free 
+# Copyright 2006-2007 by Christopher Boumenot.  This program is free 
 # software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
 #
@@ -13,7 +13,7 @@ package Net::TiVo;
 use strict;
 use warnings;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use LWP::UserAgent;
 use HTTP::Request;
@@ -149,17 +149,16 @@ Net::TiVo - Perl interface to TiVo.
 
 =head1 ABSTRACT
 
-C<Net::TiVo> provides an object-oriented interface to TiVo's XML/HTTPS
-interface.  This makes it possible to enumerate the folders and shows,
-and dump their meta-data.
+C<Net::TiVo> provides an object-oriented interface to TiVo's REST interface.
+This makes it possible to enumerate the folders and shows, and dump their
+meta-data.
 
 =head1 DESCRIPTION
 
-C<Net::TiVo> has a very simple interface, and currently only supports
-the enumeration of folder and shows using the XML/HTTPS interface.  The
-main purpose of this module was to provide access to the TiVo
-programmatically to automate the process of downloading shows from a
-TiVo.
+C<Net::TiVo> has a very simple interface, and currently only supports the
+enumeration of folder and shows using the REST interface.  The main purpose of
+this module was to provide access to the TiVo programmatically to automate the
+process of downloading shows from a TiVo.
 
 =head2 METHODS
 
