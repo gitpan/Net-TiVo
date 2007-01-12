@@ -1,4 +1,4 @@
-# $Id: Show.pm 56 2007-01-10 14:41:53Z boumenot $
+# $Id: Show.pm 57 2007-01-12 19:26:09Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -93,15 +93,18 @@ TiVo show.
 
 =head1 SYNOPSIS
 
-  use Net::TiVo;
+    use Net::TiVo;
 	
-  my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
+    my $tivo = Net::TiVo->new(
+        host => '192.168.1.25', 
+        mac  => 'MEDIA_ACCESS_KEY'
+    );
 
-  for my $folder ($tivo->folders()) {
-      for my $show ($folder->shows()) {
-          print $show->as_string(), "\n";
-      }
-  }
+    for my $folder ($tivo->folders()) {
+        for my $show ($folder->shows()) {
+            print $show->as_string(), "\n";
+        }
+    }
 
 =head1 DESCRPTION
 
@@ -182,7 +185,7 @@ title, description, duration in minutes, and url.
 
 =head1 SEE ALSO
 
-Net::TiVo, Net::TiVo::Folder
+L<Net::TiVo>, L<Net::TiVo::Folder>
 
 =head1 AUTHOR
 

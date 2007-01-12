@@ -1,4 +1,4 @@
-# $Id: Folder.pm 56 2007-01-10 14:41:53Z boumenot $
+# $Id: Folder.pm 57 2007-01-12 19:26:09Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -184,13 +184,16 @@ folder.
 
 =head1 SYNOPSIS
 
-  use Net::TiVo;
+    use Net::TiVo;
 	
-  my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
-
-  for my $folder ($tivo->folders()) {
-      print $folder->as_string(), "\n";
-  }
+    my $tivo = Net::TiVo->new(
+        host => '192.168.1.25', 
+        mac  => 'MEDIA_ACCESS_KEY'
+    );
+        
+    for my $folder ($tivo->folders()) {
+        print $folder->as_string(), "\n";
+    }
 
 =head1 DESCRPTION
 
@@ -251,7 +254,7 @@ number of show, size, and a list of shows contained in the folder.
 
 =head1 SEE ALSO
 
-Net::TiVo, Net::TiVo::Show
+L<Net::TiVo>, L<Net::TiVo::Show>
 
 =head1 AUTHOR
 

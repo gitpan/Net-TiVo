@@ -1,4 +1,4 @@
-# $Id: TiVo.pm 56 2007-01-10 14:41:53Z boumenot $
+# $Id: TiVo.pm 57 2007-01-12 19:26:09Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -13,7 +13,7 @@ package Net::TiVo;
 use strict;
 use warnings;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 use LWP::UserAgent;
 use HTTP::Request;
@@ -141,7 +141,10 @@ Net::TiVo - Perl interface to TiVo.
 
     use Net::TiVo;
 
-    my $tivo = Net::TiVo->new(host => '192.168.1.25', mac => 'MEDIA_ACCESS_KEY');
+    my $tivo = Net::TiVo->new(
+        host => '192.168.1.25', 
+        mac  => 'MEDIA_ACCESS_KEY'
+    );
 
     for ($tivo->folders()) {
         print $_->as_string(), "\n";
@@ -160,20 +163,60 @@ enumeration of folder and shows using the REST interface.  The main purpose of
 this module was to provide access to the TiVo programmatically to automate the
 process of downloading shows from a TiVo.
 
+C<Net::TiVo> does not provide support for downloading from TiVo.  There are
+several options available, including LWP, wget, and curl.  Note: I have used
+wget version >= 1.10 with success.  wget version 1.09 appeared to have an issue
+with TiVo's cookie.
+
+=head1 CACHING
+
+C<Net::TiVo> is slow due to the amount of time it takes to fetch data from
+TiVo.  This is greatly sped up by using a cache.  C<Net::TiVo>'s C<new> method
+accepts a reference to a C<Cache> object.  Any type of caching object may be
+supported as long as it meets the requirements below.  There are several cache
+implementations available on CPAN, such as C<Cache::Cache>.
+
+The following example creates a cache that lasts for 600 seconds.
+
+    use Cache::FileCache;
+    
+    my $cache = Cache::FileCache->new(
+         namespace          => 'TiVo',
+         default_expires_in => 600,
+    }
+
+    my $tivo = Net::TiVo->new(
+         host  => '192.168.1.25',
+         mac   => 'MEDIA_ACCESS_KEY',
+         cache => $cache,
+    }
+
+C<Net::TiVo> uses I<positive> caching, errors are not stored in the cache.
+
+Any C<Cache> class may be used as long as it supports the following method
+signatures.
+
+    # Set a cache value
+    $cache->set($key, $value);
+
+    # Get a cache value
+    $cache->get($key);
+
+
 =head2 METHODS
 
 =over 4
 
 =item folders()
 
-Returns an array or reference to an array containing a list of
-Net::TiVo::Folder objects.
+Returns an array in list context or array reference in scalar context
+containing a list of Net::TiVo::Folder objects.
 
 =back
 
 =head1 SEE ALSO
 
-Net::TiVo::Folder, Net::TiVo::Show
+L<Net::TiVo::Folder>, L<Net::TiVo::Show>
 
 =head1 AUTHOR
 
