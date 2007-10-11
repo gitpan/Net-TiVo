@@ -1,4 +1,4 @@
-# $Id: TiVo.pm 57 2007-01-12 19:26:09Z boumenot $
+# $Id: TiVo.pm 63 2007-03-29 14:09:37Z boumenot $
 # Author: Christopher Boumenot <boumenot@gmail.com>
 ######################################################################
 #
@@ -13,7 +13,7 @@ package Net::TiVo;
 use strict;
 use warnings;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use LWP::UserAgent;
 use HTTP::Request;
@@ -98,7 +98,10 @@ sub _parse_content {
     DEBUG(sub { "Received [" . $cont . "]"});
 
     my $xmlref = XMLin($cont, ForceArray => ['Item']);
-    die "%Error: cannot parse the TiVO XML!\n" unless defined $xmlref->{Item};
+    unless (defined $xmlref->{Item}) {
+        INFO("No content to parse, skipping ...");
+        return;
+    }
     
     DEBUG(sub { Dumper($xmlref) });
 
@@ -167,6 +170,12 @@ C<Net::TiVo> does not provide support for downloading from TiVo.  There are
 several options available, including LWP, wget, and curl.  Note: I have used
 wget version >= 1.10 with success.  wget version 1.09 appeared to have an issue
 with TiVo's cookie.
+
+=head1 BUGS
+
+One user has reported 500 errors when using the library.  He was able to track
+the bug down to LWP and Net::SSLeay.  Once he switched from using Net::SSLeay
+to Crypt::SSLeay the 500 errors went away.
 
 =head1 CACHING
 

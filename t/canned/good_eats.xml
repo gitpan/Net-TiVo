@@ -29,7 +29,7 @@
     </Details>
     <Links>
       <Content>
-        <Url>http://192.168.1.25:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=672351</Url>
+        <Url>http://tivo:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=672351</Url>
         <ContentType>video/x-tivo-mpeg</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </Content>
@@ -39,7 +39,7 @@
         <AcceptsParams>No</AcceptsParams>
       </CustomIcon>
       <TiVoVideoDetails>
-        <Url>https://192.168.1.25:443/TiVoVideoDetails?id=672351</Url>
+        <Url>https://tivo:443/TiVoVideoDetails?id=672351</Url>
         <ContentType>text/xml</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </TiVoVideoDetails>
@@ -63,7 +63,7 @@
     </Details>
     <Links>
       <Content>
-        <Url>http://192.168.1.25:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=669458</Url>
+        <Url>http://tivo:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=669458</Url>
         <ContentType>video/x-tivo-mpeg</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </Content>
@@ -73,7 +73,7 @@
         <AcceptsParams>No</AcceptsParams>
       </CustomIcon>
       <TiVoVideoDetails>
-        <Url>https://192.168.1.25:443/TiVoVideoDetails?id=669458</Url>
+        <Url>https://tivo:443/TiVoVideoDetails?id=669458</Url>
         <ContentType>text/xml</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </TiVoVideoDetails>
@@ -97,7 +97,7 @@
     </Details>
     <Links>
       <Content>
-        <Url>http://192.168.1.25:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=663877</Url>
+        <Url>http://tivo:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=663877</Url>
         <ContentType>video/x-tivo-mpeg</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </Content>
@@ -107,7 +107,7 @@
         <AcceptsParams>No</AcceptsParams>
       </CustomIcon>
       <TiVoVideoDetails>
-        <Url>https://192.168.1.25:443/TiVoVideoDetails?id=663877</Url>
+        <Url>https://tivo:443/TiVoVideoDetails?id=663877</Url>
         <ContentType>text/xml</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </TiVoVideoDetails>
@@ -131,7 +131,7 @@
     </Details>
     <Links>
       <Content>
-        <Url>http://192.168.1.25:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=662317</Url>
+        <Url>http://tivo:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=662317</Url>
         <ContentType>video/x-tivo-mpeg</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </Content>
@@ -141,7 +141,7 @@
         <AcceptsParams>No</AcceptsParams>
       </CustomIcon>
       <TiVoVideoDetails>
-        <Url>https://192.168.1.25:443/TiVoVideoDetails?id=662317</Url>
+        <Url>https://tivo:443/TiVoVideoDetails?id=662317</Url>
         <ContentType>text/xml</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </TiVoVideoDetails>
@@ -165,7 +165,7 @@
     </Details>
     <Links>
       <Content>
-        <Url>http://192.168.1.25:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=660710</Url>
+        <Url>http://tivo:80/download/Good%20Eats.TiVo?Container=%2FNowPlaying&amp;id=660710</Url>
         <ContentType>video/x-tivo-mpeg</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </Content>
@@ -175,7 +175,7 @@
         <AcceptsParams>No</AcceptsParams>
       </CustomIcon>
       <TiVoVideoDetails>
-        <Url>https://192.168.1.25:443/TiVoVideoDetails?id=660710</Url>
+        <Url>https://tivo:443/TiVoVideoDetails?id=660710</Url>
         <ContentType>text/xml</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </TiVoVideoDetails>

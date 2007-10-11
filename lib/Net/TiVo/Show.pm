@@ -25,6 +25,7 @@ our %DEFAULT_ATTRIBUTES_XPATH = (
     content_type => [qw(Details ContentType)],
     capture_date => [qw(Details CaptureDate)],    
     format       => [qw(Details SourceFormat)],
+    high_definition => [qw(Details HighDefinition)],
     size         => [qw(Details SourceSize)],
     channel      => [qw(Details SourceChannel)],
     duration     => [qw(Details Duration)],
@@ -59,6 +60,7 @@ sub new {
     $self->capture_date(hex($self->capture_date()));
 
     my ($channel, $tuner) = split(/\-/, $self->channel());
+    $tuner = 0 unless defined $tuner;
     $self->channel($channel);
     $self->tuner($tuner);
 
@@ -142,6 +144,10 @@ Returns the date this show was recorded in seconds since the epoch.
 =item format()
 
 Returns the source format of this show.
+
+=item high_definition()
+
+Returns Yes if the show was recorded in high definition, or No if it was not.
 
 =item size()
 

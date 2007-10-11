@@ -41,6 +41,8 @@ __PACKAGE__->make_accessor($_) for keys %DEFAULT_ATTRIBUTES_XPATH;
 __PACKAGE__->make_accessor($_) for qw(size);
 __PACKAGE__->make_array_accessor($_) for qw(shows);
 
+sub TIVO_MIME_TYPES { qw(video/x-tivo-mpeg video/x-tivo-raw-pes) }
+
 sub new {
     my ($class, %options) = @_;
     
@@ -65,7 +67,7 @@ sub new {
 
     my ($size, @shows);
     for my $show (@{$options{xmlref}->{Item}}) {
-        if ($show->{Links}->{Content}->{ContentType} eq 'video/x-tivo-mpeg') {
+        if (grep {$show->{Links}->{Content}->{ContentType} eq $_} TIVO_MIME_TYPES) {
             push @shows, Net::TiVo::Show->new(xmlref => $show);
             INFO("added the show " . $shows[-1]->name());
             $size += $shows[-1]->size();

@@ -29,7 +29,7 @@
     </Details>
     <Links>
       <Content>
-        <Url>http://192.168.1.25:80/download/Family%20Guy.TiVo?Container=%2FNowPlaying&amp;id=1862517</Url>
+        <Url>http://tivo:80/download/Family%20Guy.TiVo?Container=%2FNowPlaying&amp;id=1862517</Url>
         <ContentType>video/x-tivo-mpeg</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </Content>
@@ -39,7 +39,7 @@
         <AcceptsParams>No</AcceptsParams>
       </CustomIcon>
       <TiVoVideoDetails>
-        <Url>https://192.168.1.25:443/TiVoVideoDetails?id=1862517</Url>
+        <Url>https://tivo:443/TiVoVideoDetails?id=1862517</Url>
         <ContentType>text/xml</ContentType>
         <AcceptsParams>No</AcceptsParams>
       </TiVoVideoDetails>

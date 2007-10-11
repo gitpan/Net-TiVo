@@ -1,3 +1,14 @@
+0.08 (10/10/2007)
+    (cmb) Michael Lindner was getting 500 errors, and eventually tracked
+          it down to LWP and Net::SSLeay.  Once he switched to 
+          Crypt::SSLeay the 500 errors went away.
+    (cmb) David Steele reported an issue with an empty suggestions folder
+          that caused Net-TiVo to die unnecessarily.
+    (cmb) David Steele reported the the MIME has changed from
+          video/x-tivo-mpeg to video/x-tivo-raw-pes.
+    (cmb) Add the method high_definition for the Show object.
+    (cmb) Add canned data for the new schema, and update the shows test.
+
 0.07 (01/12/2007)
     (cmb) Steven Schubiger clarified the documentation for folders().
           Added his suggestion about using L<> for the SEE ALSO section.
@@ -29,4 +40,4 @@
     (cmb) Fix the POD
 
 0.01 (07/29/2006)
-	(cmb) Initial release
+    (cmb) Initial release

@@ -1,5 +1,5 @@
 ^Makefile$
-\.svn.*
+^.hg.*
 .*\.txt$
 .*\.old$
 .*\.bak$
