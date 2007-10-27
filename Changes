@@ -1,3 +1,7 @@
+0.09 (10/27/2007)
+    (cmb) Artem Belevich emailed me with another MIME type for his TiVo 
+          HD.
+
 0.08 (10/10/2007)
     (cmb) Michael Lindner was getting 500 errors, and eventually tracked
           it down to LWP and Net::SSLeay.  Once he switched to 

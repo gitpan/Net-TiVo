@@ -41,7 +41,7 @@ __PACKAGE__->make_accessor($_) for keys %DEFAULT_ATTRIBUTES_XPATH;
 __PACKAGE__->make_accessor($_) for qw(size);
 __PACKAGE__->make_array_accessor($_) for qw(shows);
 
-sub TIVO_MIME_TYPES { qw(video/x-tivo-mpeg video/x-tivo-raw-pes) }
+sub TIVO_MIME_TYPES { qw(video/x-tivo-mpeg video/x-tivo-raw-pes video/x-tivo-raw-tts) }
 
 sub new {
     my ($class, %options) = @_;
