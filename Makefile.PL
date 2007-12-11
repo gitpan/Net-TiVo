@@ -5,6 +5,7 @@ WriteMakefile(
               'PREREQ_PM'     => {  'XML::Simple'      => 2.08,
                                     'LWP::UserAgent'   => 2,
                                     'Log::Log4perl'    => 0,
+                                    'Crypt::SSLeay'    => 0,
                                   },
 
 	      ($] >= 5.005 ?

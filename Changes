@@ -1,3 +1,7 @@
+0.10 (12/10/2007)
+    (cmb) David Steele reported that Net::TiVo does not depend on 
+          Crypt::SSLeay, and it should.
+
 0.09 (10/27/2007)
     (cmb) Artem Belevich emailed me with another MIME type for his TiVo 
           HD.
