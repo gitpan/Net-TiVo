@@ -1,3 +1,8 @@
+0.11 (04/23/2008)
+    (cmb) Improve the kwalitee.
+    (cmb) Add a method to expose the InProgress flag, suggested by
+          Brian O'Quinn.
+
 0.10 (12/10/2007)
     (cmb) David Steele reported that Net::TiVo does not depend on 
           Crypt::SSLeay, and it should.

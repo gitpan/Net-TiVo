@@ -12,6 +12,8 @@ README
 t/001constructors.t
 t/002folder.t
 t/003shows.t
+t/004pod.t
+t/005pod-coverage.t
 t/canned/family_guy.xml
 t/canned/good_eats.xml
 t/canned/no_reservations.xml

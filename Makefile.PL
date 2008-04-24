@@ -6,6 +6,7 @@ WriteMakefile(
                                     'LWP::UserAgent'   => 2,
                                     'Log::Log4perl'    => 0,
                                     'Crypt::SSLeay'    => 0,
+                                    'Test::More'       => 0,
                                   },
 
 	      ($] >= 5.005 ?

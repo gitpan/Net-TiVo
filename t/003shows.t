@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 54;
+use Test::More tests => 59;
 use File::Spec;
 use Net::TiVo;
 
@@ -35,6 +35,7 @@ for my $show (@shows) {
     is($show->channel(), 54, "show channel");
     is($show->tuner(), 0, "show tuner");
     is($show->series_id(), "SH273928", "show series id");
+    is($show->in_progress(), "", "show in progress");
 }
 
 my @episodes = ('A Bird in the Pan',

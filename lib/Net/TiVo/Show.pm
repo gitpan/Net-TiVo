@@ -26,6 +26,7 @@ our %DEFAULT_ATTRIBUTES_XPATH = (
     capture_date => [qw(Details CaptureDate)],    
     format       => [qw(Details SourceFormat)],
     high_definition => [qw(Details HighDefinition)],
+    in_progress  => [qw(Details InProgress)],
     size         => [qw(Details SourceSize)],
     channel      => [qw(Details SourceChannel)],
     duration     => [qw(Details Duration)],
@@ -148,6 +149,11 @@ Returns the source format of this show.
 =item high_definition()
 
 Returns Yes if the show was recorded in high definition, or No if it was not.
+
+=item in_progress()
+
+Returns Yes if the show is currently being recorded, or an empty string
+otherwise.  This method can be used in as a predicate.
 
 =item size()
 

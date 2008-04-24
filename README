@@ -86,6 +86,10 @@ CACHING
         Returns an array in list context or array reference in scalar
         context containing a list of Net::TiVo::Folder objects.
 
+LICENSE
+    This library is free software; you can redistribute it and/or modify
+    it under the same terms as Perl itself.
+
 SEE ALSO
     Net::TiVo::Folder, Net::TiVo::Show
 
